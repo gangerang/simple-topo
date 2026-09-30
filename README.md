@@ -2,7 +2,7 @@
 
 A simple web map for viewing NSW topographic maps and aerial imagery. It works on both desktop and mobile devices.
 
-**Live site:** [six.bushwalkingmaps.com](https://six.bushwalkingmaps.com)
+**Live site:** [simple.bushwalkingmaps.com](https://simple.bushwalkingmaps.com)
 
 **Simple Topo is not a NSW Government service.** It is not operated, endorsed or supported by DCS Spatial Services, so please don't contact them about it. Simple Topo is run by [al3x.au](https://al3x.au); for questions or problems, email [alex@al3x.au](mailto:alex@al3x.au). For official NSW Government mapping, use [SDT Explorer](https://portal.spatial.nsw.gov.au/explorer/index.html) ([about SDT Explorer](https://www.nsw.gov.au/environment-land-and-water/spatial-data-and-mapping/spatial-digital-twin/explorer)). For official Spatial Services products, datasets and support, visit [spatial.nsw.gov.au](https://www.spatial.nsw.gov.au).
 
