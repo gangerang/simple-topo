@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+       	<meta name="description" content="Simple Topo is a simple web map for viewing NSW topographic maps and aerial imagery. Independent and free. Not a NSW Government service." />
+		<link rel="icon" type="image/png" sizes="32x32" href="images/simple-topo-icon-32.png" />
+		<link rel="apple-touch-icon" href="images/simple-topo-icon-192.png" />
+        <title>Simple Topo</title>
+        <link rel="stylesheet" href="css/sixmaps.css"/>
+	        
+        <script type="text/javascript">
+            var dojoConfig = {
+            	async:true,
+            	locale:"en-gb",
+            	baseUrl:"js/dojo",
+            	parseOnLoad: false,
+                packages: [ 
+               		{"name": "sixmaps","location": "../sixmaps"},
+               		{"name": "channels","location": "../channels"}
+	   			]
+            };
+        </script>
+    
+        <script type="text/javascript" src="js/sixmaps/main.js"></script>        
+        <script type="text/javascript">
+			require([
+				"dojo/domReady!",
+				"dojo/io-query",
+				"sixmaps/app/App",
+				"sixmaps/properties"
+			],function(domReady, ioQuery, sixmapsApp, appProperties){
+				var queryParams = ioQuery.queryToObject(window.location.search.slice(1));  
+				var loadNode = document.getElementById('loadNode');
+				var params = {
+					config:queryParams.config || "sixmaps",
+					parameters : {
+						loadNode : loadNode,
+						channelsUrl : require.toUrl("channels").toString()
+					},
+					analyticsKey: appProperties.analyticsKey,
+					readQueryStringParams: true
+				};		
+				var app = new sixmapsApp(params).placeAt("sixmaps");
+				app.startup();
+			}); 	 
+        </script>
+    </head>
+    <body class="claro">
+		<div id="sixmapsContainer">
+			<div id="loadNode" class="loadNode">
+					<img src="images/simple-topo-logo.png" width="260" height="80" alt="Simple Topo">
+					<div><img src="images/loadingAnimation.gif"></div>
+			</div>
+			<div id="sixmaps"> 
+			</div> 
+		</div>
+    </body>
+</html>
